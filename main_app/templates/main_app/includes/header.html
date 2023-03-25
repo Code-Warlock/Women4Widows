@@ -1,0 +1,45 @@
+{% load static %}
+<header class="xs-header header-transparent">
+    <div class="container">
+      <nav class="xs-menus">
+        <div class="nav-header">
+          <div class="nav-toggle"></div>
+          <a href="" class="nav-logo">
+            <img src="{% static 'main_app/images/ururu_logo.jpg' %}" class="logo-img" alt="" />
+          </a>
+        </div>
+        <div class="nav-menus-wrapper row">
+          <div class="xs-logo-wraper col-lg-2 xs-padding-0">
+            <a class="nav-brand" href="{% url 'main-page' %}">
+              {% comment %} <img src="{% static 'main_app/images/ururu_logo.jpg' %}" alt="" /> {% endcomment %}
+            </a>
+          </div>
+          <div class="col-lg-7">
+            <ul class="nav-menu">
+              <li>
+                <a href=" {% url 'main-page' %}">Home</a>
+              </li>
+              <li><a href="{% url 'about' %}">about us</a></li>
+              <li>
+              </li>
+              <li>
+                <a href="#">Events</a>
+                {% comment %} <ul class="nav-dropdown">
+                  <li><a href="event.html">Event</a></li>
+                  <li><a href="event-single.html">Event single</a></li>
+                </ul> {% endcomment %}
+              </li>
+              <li><a href="{% url 'contact' %}">Contact</a></li>
+              <li><a href="{% url 'projects' %}">Projects</a></li>
+              <li><a href="{% url 'team' %}">team</a></li>
+            </ul>
+          </div>
+          <div class="xs-navs-button d-flex-center-end col-lg-3">
+            <a href="#" class="btn btn-primary">
+              <span class="badge"><i class="fa fa-heart"></i></span> Donate Now
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>

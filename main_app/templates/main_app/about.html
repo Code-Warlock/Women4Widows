@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Conversation in Action - {{title}}
+{% endblock %}
+
+{% block styles %}
+    {% include 'main_app/includes/styles.html' %}
+{% endblock styles %}
+
+{% block content %}
+{% include 'main_app/includes/header.html' %}
+
+
+<section class="xs-banner-inner-section parallax-window" style="background-image:url({% static 'main_app/images/smiling_widows.jpg' %})">
+<div class="xs-black-overlay"></div>
+<div class="container">
+<div class="color-white xs-inner-banner-content">
+<h2>About Us</h2>
+<p>Who are we and why are we here?</p>
+<ul class="xs-breadcumb">
+<li class="badge badge-pill badge-primary"><a href="{% url 'main-page' %}" class="color-white"> Home /</a> About</li>
+</ul>
+</div>
+</div>
+</section>
+
+<main class="xs-main">
+
+<div class="xs-video-popup-section">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 content-center">
+<div class="xs-video-popup-wraper">
+<img src="{% static 'main_app/images/clearing_the_bush.jpg' %}" alt="">
+<div class="xs-video-popup-content">
+<a href="{% static 'main_app/videos/video1.mp4' %}" class="xs-video-popup xs-round-btn">
+<i class="fa fa-play"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> 
+
+<section class="xs-content-section-padding">
+<div class="container">
+<div class="row">
+<div class="col-lg-11 content-center">
+<div class="xs-heading xs-mb-100 text-center">
+<h2 class="xs-mb-0 xs-title">We are a Global non-profit organization that <span class="color-primary">supports</span> and moves for the good causes and positive change of widows all over the world.</h2>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="xs-about-feature">
+<h3>Our Mission</h3>
+<p class="lead">The CharityPress community was named a “Top 25 Best Global Philanthropist” by Barron’s. We beat Oprah. And, Mashable named CharityPress something like that.</p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="xs-about-feature">
+<h3>Our Vission</h3>
+<p class="lead">The Globian Fund for Charities seeks positive change around the world through support of non-profit organizations dedicated to social, cultural.</p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="xs-about-feature">
+<h3>Our Values</h3>
+<ul class="xs-unorder-list play green-icon">
+<li>Accountability</li>
+<li>Reliability</li>
+<li>Cost-effectiveness</li>
+<li>Personal service</li>
+</ul>
+ </div>
+</div>
+</div>
+</div>
+</section> 
+
+<div class="xs-funfact-section xs-content-section-padding waypoint-tigger parallax-window" style="background-image: url('{% static 'main_app/images/backgrounds/parallax_1.jpg' %}')">
+<div class="container">
+<div class="row col-lg-10 xs-heading mx-auto">
+<h2 class="xs-title color-white small">Our agency has been present for over 30 years. We make the best for all our children.</h2>
+</div>
+<div class="row">
+<div class="col-lg-3 col-md-6">
+<div class="xs-single-funFact color-white">
+<i class="icon-donation_2"></i>
+<span class="number-percentage-count number-percentage" data-value="10" data-animation-duration="3500">0</span><span>M</span>
+<small>Causes</small>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="xs-single-funFact color-white">
+<i class="icon-group"></i>
+<span class="number-percentage-count number-percentage" data-value="25" data-animation-duration="3500">0</span><span>k</span>
+<small>Valunteer</small>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="xs-single-funFact color-white">
+<i class="icon-children"></i>
+<span class="number-percentage-count number-percentage" data-value="30" data-animation-duration="3500">0</span><span>k</span>
+<small>Childrens</small>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="xs-single-funFact color-white">
+<i class="icon-planet-earth"></i>
+<span class="number-percentage-count number-percentage" data-value="14" data-animation-duration="3500">0</span><span>k</span>
+<small>Countrys</small>
+</div>
+</div>
+</div>
+</div>
+<div class="xs-black-overlay"></div>
+</div> 
+<section class="xs-section-padding">
+    <div class="container">
+    <div class="xs-heading row xs-mb-60">
+    <div class="col-md-9 col-xl-9">
+    <h2 class="xs-title">What We Do</h2>
+    <span class="xs-separetor dashed"></span>
+    <p>Widows in Nigeria live on the absolute fringe of society. They are often denied inheritance rights and have their property taken after the death of a partner.  With most having no education, they labor for a couple of dollars per day, not near enough to feed their children.  Since they are widowed, they are often abused socially, and many physically, by members of their community.  Sunrise for Rural Dwellers, a 501c3, organized by Fr. Tony Okolo, has embarked on a path to empower widows, and give these women a path towards dignity and a better life.</p>
+    </div>
+    </div>
+    {% include 'main_app/includes/what_we_do.html' %}
+    </div>
+    </section> 
+
+<section class="xs-section-padding bg-gray">
+<div class="container">
+<div class="xs-heading row xs-mb-60">
+<div class="col-md-9 col-xl-9">
+<h2 class="xs-title">Our Team</h2>
+<span class="xs-separetor dashed"></span>
+<p>It allows you to gather monthly subscriptions from fans to help fund your creative projects. They also encourage their users to offer rewards to fans as a way to repay them for their support.</p>
+</div>
+</div>
+<div class="row xs-mb-60">
+<div class="col-md-6 col-lg-3">
+<div class="xs-single-team">
+<img src="assets/images/team/team_1.png" alt="">
+<div class="xs-team-content">
+<h4>William Khanna</h4>
+<small>CEO & Founder</small>
+<svg class="xs-svgs" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 138">
+<path class="fill-red" d="M375,3294H645v128a10,10,0,0,1-10,10l-250-20a10,10,0,0,1-10-10V3294Z" transform="translate(-375 -3294)" />
+</svg>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-lg-3">
+<div class="xs-single-team">
+<img src="assets/images/team/team_2.png" alt="">
+<div class="xs-team-content">
+<h4>Mr. Aladin</h4>
+<small>General Manager</small>
+<svg class="xs-svgs" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 138">
+<path class="fill-purple" d="M375,3294H645v128a10,10,0,0,1-10,10l-250-20a10,10,0,0,1-10-10V3294Z" transform="translate(-375 -3294)" />
+</svg>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-lg-3">
+<div class="xs-single-team">
+<img src="assets/images/team/team_3.png" alt="">
+<div class="xs-team-content">
+<h4>Zummon Khan</h4>
+<small>Volunteer</small>
+<svg class="xs-svgs" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 138">
+<path class="fill-blue" d="M375,3294H645v128a10,10,0,0,1-10,10l-250-20a10,10,0,0,1-10-10V3294Z" transform="translate(-375 -3294)" />
+</svg>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-lg-3">
+<div class="xs-single-team">
+<img src="assets/images/team/team_4.png" alt="">
+<div class="xs-team-content">
+<h4>Harista Pro</h4>
+<small>Volunteer</small>
+<svg class="xs-svgs" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 138">
+<path class="fill-orange" d="M375,3294H645v128a10,10,0,0,1-10,10l-250-20a10,10,0,0,1-10-10V3294Z" transform="translate(-375 -3294)" />
+</svg>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center">
+<a href="#" class="btn btn-success">
+join with us
+</a>
+</div>
+</div>
+</section> 
+
+<section class="xs-partner-section" style="background-image: url('assets/images/map.png');">
+<div class="container">
+<div class="row">
+<div class="col-lg-5">
+<div class="xs-partner-content">
+<div class="xs-heading xs-mb-40">
+<h2 class="xs-mb-0 xs-title">Trusted by the biggest <span class="color-green">brand.</span></h2>
+</div>
+<p>In-kind donations from our donors and partners allow charity: water to pass 100% of public donations straight to water projects. We are deeply grateful for those who have surprised us with their generosity. A big thanks to the following companies and people who have helped make charity: water’s work possible.</p>
+<a href="#" class="btn btn-primary bg-orange">
+join us now
+</a>
+</div>
+</div>
+<div class="col-lg-7">
+<ul class="fundpress-partners">
+<li><a href="#"><img src="assets/images/partner/client_1.png" alt=""></a></li>
+<li><a href="#"><img src="assets/images/partner/client_2.png" alt=""></a></li>
+<li><a href="#"><img src="assets/images/partner/client_3.png" alt=""></a></li>
+<li><a href="#"><img src="assets/images/partner/client_4.png" alt=""></a></li>
+<li><a href="#"><img src="assets/images/partner/client_5.png" alt=""></a></li>
+</ul>
+</div>
+</div>
+</div>
+</section> 
+</main>
+
+{% include "main_app/includes/footer.html" %}
+{% endblock content %}
+
+{% block scripts  %}
+    {% include "main_app/includes/scripts.html" %}
+{% endblock %}

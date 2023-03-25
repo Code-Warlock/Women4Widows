@@ -1,0 +1,864 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Conversation in Action - {{title}}
+{% endblock %}
+
+{% block styles %}
+    {% include 'main_app/includes/styles.html' %}
+{% endblock styles %}
+
+{% block content %}
+
+{% include 'main_app/includes/header.html' %}
+
+<section class="xs-welcome-slider">
+  <div class="xs-banner-slider owl-carousel">
+    {% for goal in goals %}
+    <div
+      class="xs-welcome-content"
+      style="background-image: url({% static 'main_app/images/'|add:goal.image %})"
+    >
+      <div class="container">
+        <div class="xs-welcome-wraper color-white">
+          <h2>{{ name_main }}
+            <br>
+            &diamondsuit;
+            <br>
+            {{name_secondary}}
+          </h2>
+          <p>
+            {{ goal.text }}
+          </p>
+          <div class="xs-btn-wraper">
+            <a href="#" class="btn btn-outline-primary"> join us now </a>
+            <a href="#" class="btn btn-primary">
+              <span class="badge"><i class="fa fa-heart"></i></span> Donate Now
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="xs-black-overlay"></div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="waypoint-tigger xs-section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-lg-6">
+        <div class="xs-archive-content">
+          <div class="xs-heading">
+            <h2 class="xs-line-title">Our Mission</h2>
+            <h3 class="xs-title big" data-title="Archived">Empowerment for Widows</h3>
+          </div>
+          <p>
+            There is a growing evidence in many parts of Nigeria that most widows in the rural areas live in abject poverty, because their husbands’ families deprive them of their husband’s properties and subject them to a lot of dehumanizing treatments.
+          </p>
+          <h5>Our strategic priorities up to date are:</h5>
+          <ul class="xs-unorder-list arrow">
+            <li>P{{ "rovide sustenance for the widows and their families." | lower}} </li>
+            <li>H{{ "ELPING WIDOWS TO BE SELF-SUFFICIENT​" | lower}} </li>
+            <li>R{{ "eimaging the role of widows in the local communities" | lower}} </li>
+          </ul>
+          {% comment %} <ul class="xs-funfact-list">
+            <li>
+              <p>
+                <span
+                  class="number-percentage-count number-percentage"
+                  data-value="130"
+                  data-animation-duration="3500"
+                  >0</span
+                ><sup> + </sup>
+              </p>
+              <span>Widows</span>
+            </li>
+            <li>
+              <p>
+                <span
+                  class="number-percentage-count number-percentage"
+                  data-value="19"
+                  data-animation-duration="3500"
+                  >0</span
+                ><sup> + </sup>
+              </p>
+              <span>LG</span>
+            </li>
+            <li>
+              <p>
+                <span
+                  class="number-percentage-count number-percentage"
+                  data-value="90"
+                  data-animation-duration="3500"
+                  >0</span
+                ><sup> + </sup>
+              </p>
+              <span>Volunteers</span>
+            </li>
+            <li>
+              <p>
+                <span
+                  class="number-percentage-count number-percentage"
+                  data-value="130"
+                  data-animation-duration="3500"
+                  >0</span
+                ><sup> + </sup>
+              </p>
+              <span>Widows Interviewed</span>
+            </li>
+            <div class="clearfix"></div>
+          </ul> {% endcomment %}
+        </div>
+      </div>
+      <div class="col-md-12 col-lg-6 row xs-archive-image">
+        <div class="col-md-12 xs-mb-30">
+          <img src="{% static 'main_app/images/widows.jpg' %}" alt="" class="rounded" />
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <img src="{% static 'main_app/images/bags.jpg' %}" alt="" class="rounded" />
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <img src="{% static 'main_app/images/tommorrowtomato.jpg' %}" alt="" class="rounded" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% comment %} <section class="bg-gray waypoint-tigger xs-section-padding">
+  <div class="container">
+    <div class="xs-heading row xs-mb-60">
+      <div class="col-md-9 col-xl-9">
+        <h2 class="xs-title">Inspiration</h2>
+        <span class="xs-separetor dashed"></span>
+        <p>
+          Apart from the fact that the widow is usually disadvantaged in the distribution of the late husband's property, 
+          <br />
+          she is also subjected to some unpleasant widowhood practices. Such practices include:,
+        </p>
+      </div>
+      <div class="col-xl-3 col-md-3 xs-btn-wraper">
+        <a href="#" class="btn btn-primary">More</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <div class="xs-popular-item xs-box-shadow">
+          <div class="xs-item-header">
+            <img src="{% static 'main_app/images/shaving.jpg' %}" alt="" />
+            <div class="xs-skill-bar">
+              <div class="xs-skill-track">
+                <p>
+                  <span
+                    class="number-percentage-count number-percentage"
+                    data-value="90"
+                    data-animation-duration="3500"
+                    >0</span
+                  >%
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="xs-item-content">
+            <ul class="xs-simple-tag xs-mb-20">
+              <li><a href="#">Food</a></li>
+            </ul>
+            <a href="#" class="xs-post-title xs-mb-30"
+              >Shaving of hairs</a
+            >
+            <ul class="xs-list-with-content">
+              <li>$67,000<span>Pledged</span></li>
+              <li>
+                <span
+                  class="number-percentage-count number-percentage"
+                  data-value="90"
+                  data-animation-duration="3500"
+                  >0</span
+                >% <span>Funded</span>
+              </li>
+              <li>3<span>Days to go</span></li>
+            </ul>
+            <span class="xs-separetor"></span>
+            <div class="row xs-margin-0">
+              <div class="xs-round-avatar">
+                <img src="{% static 'main_app/images/avatar/avatar_1.jpg' %}" alt="" />
+              </div>
+              <div class="xs-avatar-title">
+                <a href="#"><span>By</span>Ema Watson</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="xs-popular-item xs-box-shadow">
+          <div class="xs-item-header">
+            <img src="{% static 'main_app/images/causes/causes_5.jpg' %}" alt="" />
+            <div class="xs-skill-bar">
+              <div class="xs-skill-track">
+                <p>
+                  <span
+                    class="number-percentage-count number-percentage"
+                    data-value="59"
+                    data-animation-duration="3500"
+                    >0</span
+                  >%
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="xs-item-content">
+            <ul class="xs-simple-tag xs-mb-20">
+              <li><a href="#">Health</a></li>
+            </ul>
+            <a href="#" class="xs-post-title xs-mb-30"
+              >The Read Read: Braille Literacy Tool for the Blind</a
+            >
+            <ul class="xs-list-with-content">
+              <li>$33,600<span>Pledged</span></li>
+              <li>
+                <span
+                  class="number-percentage-count number-percentage"
+                  data-value="59"
+                  data-animation-duration="3500"
+                  >0</span
+                >% <span>Funded</span>
+              </li>
+              <li>10<span>Days to go</span></li>
+            </ul>
+            <span class="xs-separetor"></span>
+            <div class="row xs-margin-0">
+              <div class="xs-round-avatar">
+                <img src="{% static 'main_app/images/avatar/avatar_2.jpg' %}" alt="" />
+              </div>
+              <div class="xs-avatar-title">
+                <a href="#"><span>By</span>Kene Williamson</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="xs-popular-item xs-box-shadow">
+          <div class="xs-item-header">
+            <img src="{% static 'main_app/images/causes/causes_6.jpg' %}" alt="" />
+            <div class="xs-skill-bar">
+              <div class="xs-skill-track">
+                <p>
+                  <span
+                    class="number-percentage-count number-percentage"
+                    data-value="35"
+                    data-animation-duration="3500"
+                    >0</span
+                  >%
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="xs-item-content">
+            <ul class="xs-simple-tag xs-mb-20">
+              <li><a href="#">Education</a></li>
+            </ul>
+            <a href="#" class="xs-post-title xs-mb-30"
+              >BuildOne: $99 3D Printer w/ WiFi and Auto Bed Leveling!</a
+            >
+            <ul class="xs-list-with-content">
+              <li>$12,760<span>Pledged</span></li>
+              <li>
+                <span
+                  class="number-percentage-count number-percentage"
+                  data-value="35"
+                  data-animation-duration="3500"
+                  >0</span
+                >% <span>Funded</span>
+              </li>
+              <li>66<span>Days to go</span></li>
+            </ul>
+            <span class="xs-separetor"></span>
+            <div class="row xs-margin-0">
+              <div class="xs-round-avatar">
+                <img src="{% static 'main_app/images/avatar/avatar_3.jpg' %}" alt="" />
+              </div>
+              <div class="xs-avatar-title">
+                <a href="#"><span>By</span>Leo Baddabes</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="xs-popular-item xs-box-shadow">
+          <div class="xs-item-header">
+            <img src="{% static 'main_app/images/causes/causes_7.jpg' %}" alt="" />
+            <div class="xs-skill-bar">
+              <div class="xs-skill-track">
+                <p>
+                  <span
+                    class="number-percentage-count number-percentage"
+                    data-value="85"
+                    data-animation-duration="3500"
+                    >0</span
+                  >%
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="xs-item-content">
+            <ul class="xs-simple-tag xs-mb-20">
+              <li><a href="#">Charity</a></li>
+            </ul>
+            <a href="#" class="xs-post-title xs-mb-30"
+              >DACBerry PRO – Professional Soundcard for Raspberry Pi</a
+            >
+            <ul class="xs-list-with-content">
+              <li>$99,980<span>Pledged</span></li>
+              <li>
+                <span
+                  class="number-percentage-count number-percentage"
+                  data-value="85"
+                  data-animation-duration="3500"
+                  >0</span
+                >% <span>Funded</span>
+              </li>
+              <li>2<span>Days to go</span></li>
+            </ul>
+            <span class="xs-separetor"></span>
+            <div class="row xs-margin-0">
+              <div class="xs-round-avatar">
+                <img src="{% static 'main_app/images/avatar/avatar_4.jpg' %}" alt="" />
+              </div>
+              <div class="xs-avatar-title">
+                <a href="#"><span>By</span>Jhung Li</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="xs-popular-item xs-box-shadow">
+          <div class="xs-item-header">
+            <img src="{% static 'main_app/images/causes/causes_8.jpg' %}" alt="" />
+            <div class="xs-skill-bar">
+              <div class="xs-skill-track">
+                <p>
+                  <span
+                    class="number-percentage-count number-percentage"
+                    data-value="74"
+                    data-animation-duration="3500"
+                    >0</span
+                  >%
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="xs-item-content">
+            <ul class="xs-simple-tag xs-mb-20">
+              <li><a href="#">Cave</a></li>
+            </ul>
+            <a href="#" class="xs-post-title xs-mb-30"
+              >BIKI: First Bionic Wireless Under water Fish Drone</a
+            >
+            <ul class="xs-list-with-content">
+              <li>$40,000<span>Pledged</span></li>
+              <li>
+                <span
+                  class="number-percentage-count number-percentage"
+                  data-value="74"
+                  data-animation-duration="3500"
+                  >0</span
+                >% <span>Funded</span>
+              </li>
+              <li>70<span>Days to go</span></li>
+            </ul>
+            <span class="xs-separetor"></span>
+            <div class="row xs-margin-0">
+              <div class="xs-round-avatar">
+                <img src="{% static 'main_app/images/avatar/avatar_5.jpg' %}" alt="" />
+              </div>
+              <div class="xs-avatar-title">
+                <a href="#"><span>By</span>Chirstina Perry</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="xs-popular-item xs-box-shadow">
+          <div class="xs-item-header">
+            <img src="{% static 'main_app/images/causes/causes_11.jpg' %}" alt="" />
+            <div class="xs-skill-bar">
+              <div class="xs-skill-track">
+                <p>
+                  <span
+                    class="number-percentage-count number-percentage"
+                    data-value="89"
+                    data-animation-duration="3500"
+                    >0</span
+                  >%
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="xs-item-content">
+            <ul class="xs-simple-tag xs-mb-20">
+              <li><a href="#">Watar</a></li>
+            </ul>
+            <a href="#" class="xs-post-title xs-mb-30"
+              >Brilliant After All, A New Album by Rebecca: Help poor people</a
+            >
+            <ul class="xs-list-with-content">
+              <li>$98,980<span>Pledged</span></li>
+              <li>
+                <span
+                  class="number-percentage-count number-percentage"
+                  data-value="89"
+                  data-animation-duration="3500"
+                  >0</span
+                >% <span>Funded</span>
+              </li>
+              <li>2<span>Days to go</span></li>
+            </ul>
+            <span class="xs-separetor"></span>
+            <div class="row xs-margin-0">
+              <div class="xs-round-avatar">
+                <img src="{% static 'main_app/images/avatar/avatar_6.jpg' %}" alt="" />
+              </div>
+              <div class="xs-avatar-title">
+                <a href="#"><span>By</span>Prekina William</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> {% endcomment %}
+
+<section class="xs-section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-lg-6">
+        <div class="xs-text-content xs-pr-20">
+          <h2 class="color-navy-blue">
+            How do we go about it?
+          </h2>
+          <p>
+            There a great need to empower these rural widows to become self-sufficient to work in the agricultural sector with access to finance, knowledge and trainings which will enable them have sustainable livelihoods through farming, guaranteeing food security for their children.
+          </p>
+          <blockquote>
+            Research has shown time and time again that when you invest in women, they invest in everyone else.  Women take their earnings and invest them back into their family, including their children's health and education.
+             <br> <a href="{% url 'contact' %}"><span>Contact us</span>.</a>
+          </blockquote>
+          <a href="#" class="btn btn-primary">
+            <span class="badge"><i class="fa fa-heart"></i></span> Donate Now
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="xs-feature-image">
+          <img src="{% static 'main_app/images/'|add:url1 %}" alt="" />
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="xs-feature-image">
+          <img src="{% static 'main_app/images/'|add:url2 %}" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-navy-blue">
+  <div class="container-fulid">
+    <div class="xs-feature-content">
+      <h2 class="color-white">
+        This mission is for the <span> widows </span> in Africa , most especially in Nigeria, lets contribute.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="xs-feature-box-fulid">
+  <div class="container-fulid">
+    <div class="row xs-feature-box-wraper">
+      <div class="col-md-12 col-lg-4 xs-feature-box">
+        <div class="xs-feature-box-content">
+          <h3 class="color-white">The journey just started. We need your support.</h3>
+          <a href="#" class="btn btn-secondary btn-color-alt"> get involved </a>
+        </div>
+      </div>
+      <div class="col-md-12 col-lg-4 xs-feature-box highlight">
+        <div class="xs-feature-box-content">
+          <h3 class="color-white">Sponsor one of our projects</h3>
+          <p>
+            We have ongoinging projects that require funding, you could be a part of the mission by sponsoring one of our projects.
+            African widows need your help
+          </p>
+          <a href="#" class="btn btn-secondary btn-color-alt">
+            Become an Sponsor
+          </a>
+        </div>
+      </div>
+      <div class="col-md-12 col-lg-4 xs-feature-box">
+        <div class="xs-feature-box-content">
+          <h3 class="color-white">Connect with us on social media</h3>
+          <ul class="xs-social-list">
+            <li>
+              <a href="#"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-pinterest-p"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-google-plus"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="xs-section-padding">
+  <div class="container">
+    <div class="xs-heading xs-mb-70 text-center">
+      <h2 class="xs-mb-0 xs-title">
+        We have got about <span>2 projects</span> for <br />
+        20M widows in Africa
+      </h2>
+    </div>
+    {% include 'main_app/includes/what_we_do.html' %}
+  </div>
+</section>
+
+<section
+  class="parallax-window xs-become-a-volunteer xs-section-padding"
+  style="background-image: url({% static 'main_app/images/smiling_widows.jpg' %})"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-lg-7">
+        <div class="xs-volunteer-form-wraper bg-aqua">
+          <h2>Become a Volunteer</h2>
+          <p>
+            It takes more hands to build people. Decide what to do. Submit a name and an email and in the message box tell us your intentions.
+          </p>
+          <form
+            action="#"
+            method="POST"
+            id="volunteer-form"
+            class="xs-volunteer-form"
+          >
+            <div class="row">
+              <div class="col-lg-6">
+                <input
+                  type="text"
+                  id="volunteer_name"
+                  class="form-control"
+                  placeholder="Your Name"
+                />
+              </div>
+              <div class="col-lg-6">
+                <input
+                  type="email"
+                  id="volunteer_email"
+                  class="form-control"
+                  placeholder="Your Email"
+                />
+              </div>
+              <div class="col-lg-6">
+              </div>
+              <div class="col-lg-6 xs-mb-20">
+            </div>
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Enter your message"
+              cols="30"
+              class="form-control"
+              rows="10"
+            ></textarea>
+            <button type="submit" class="btn btn-secondary btn-color-alt">
+              apply now
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="xs-section-padding">
+  <div class="container">
+    <div class="xs-heading row xs-mb-60">
+      <div class="col-md-9 col-xl-9">
+        <h2 class="xs-title">Our Events</h2>
+        <span class="xs-separetor dashed"></span>
+        <p>
+          Conversation in Action - Women4Widows initiative has and will regularly have events coming up for our widows <br />
+          Here's a few of them.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 row xs-single-event">
+        <div class="col-md-5">
+          <div class="xs-event-image">
+            <img src="{% static 'main_app/images/women_ready_with_cutlass.jpg' %}" alt="" />
+            <div class="xs-entry-date">
+              <span class="entry-date-day">27</span>
+              <span class="entry-date-month">dec</span>
+            </div>
+            <div class="xs-black-overlay"></div>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="xs-event-content">
+            <a href="#">Community Farm Clearing</a>
+            <p>
+              The women will be working on the community farm, first of , for social purposes and as well as to prepare them for large scale agricultural production.
+            </p>
+            <div class="xs-countdown-timer" data-countdown="2020/01/24"></div>
+            <a href="#" class="btn btn-primary"> Learn More </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 row xs-single-event">
+        <div class="col-md-5">
+          <div class="xs-event-image">
+            <img src="{% static 'main_app/images/bags.jpg' %}" alt="" />
+            <div class="xs-entry-date">
+              <span class="entry-date-day">15</span>
+              <span class="entry-date-month">aug</span>
+            </div>
+            <div class="xs-black-overlay"></div>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="xs-event-content">
+            <a href="#">Donations.</a>
+            <p>
+              Donations of food items and other items are to be delivered to the widows for their sustenace and that of their family members.
+            </p>
+            <div class="xs-countdown-timer" data-countdown="2020/08/24"></div>
+            <a href="#" class="btn btn-primary"> Learn More </a>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section
+  class="bg-gray xs-partner-section"
+  style="background-image: url('{% static 'main_app/images/map.png' %}')"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+        <div class="xs-partner-content">
+          <div class="xs-heading xs-mb-40">
+            <h2 class="xs-mb-0 xs-title">
+              Women4Widows is proudly sponsored by <span>Sunset.</span>
+            </h2>
+          </div>
+          <p>
+            Sunrise for Rural Dwellers, a 501c3, organized by Fr. Tony Okolo, has embarked on a path to empower widows, and give these women a path towards dignity and a better life. Sunrise for Rural Dwellers is working towards empowering these women by funding a farm.  Their goal is two-fold:  provide sustenance for the widows and their families and provide a revenue source for them through the agricultural surplus from the farm. Therefore, this investment in the widows, lifts their families, Nigeria, and all of society.
+          </p>
+          <a href="#" class="btn btn-primary"> join us now </a>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <ul class="women4widows">
+          {% comment %} <li>
+            <a href="#"
+              ><img src="{% static 'main_app/images/partner/client_1.png' %}" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="{% static 'main_app/images/partner/client_2.png' %}" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="{% static 'main_app/images/partner/client_3.png' %}" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="{% static 'main_app/images/partner/client_4.png' %}" alt=""
+            /></a>
+          </li> {% endcomment %}
+          <li>
+            <a href="#"
+              ><img src="{% static 'main_app/images/sunrise-no-bg.png' %}" alt=""
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% comment %} <section class="xs-section-padding">
+  <div class="container">
+    <div class="xs-heading row xs-mb-60">
+      <div class="col-md-9 col-xl-9">
+        <h2 class="xs-title">From the Journal</h2>
+        <span class="xs-separetor dashed"></span>
+        <p>
+          It allows you to gather monthly subscriptions from fans to help fund
+          your creative projects. They also encourage their users to offer
+          rewards to fans as a way to repay them for their support.
+        </p>
+      </div>
+      <div class="col-xl-3 col-md-3 xs-btn-wraper">
+        <a href="#" class="btn btn-primary">all Causes</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <div class="xs-box-shadow xs-single-journal">
+          <div class="entry-thumbnail">
+            <img src="{% static 'main_app/images/blog/blog_1.jpg' %}" alt="" />
+            <div class="post-author">
+              <span class="xs-round-avatar">
+                <img
+                  class="img-responsive"
+                  src="{% static 'main_app/images/avatar/avatar_1.jpg' %}"
+                  alt=""
+                />
+              </span>
+              <span class="author-name">
+                <a href="#">By Simona</a>
+              </span>
+            </div>
+          </div>
+          <div class="entry-header">
+            <div class="entry-meta">
+              <span class="date">
+                <a href="#" rel="bookmark" class="entry-date">
+                  27th August 2017
+                </a>
+              </span>
+            </div>
+            <h4 class="entry-title">
+              <a href="#"
+                >Brilliant After All, A New Album by Rebecca: Help poor
+                people</a
+              >
+            </h4>
+          </div>
+          <span class="xs-separetor"></span>
+          <div class="post-meta">
+            <span class="comments-link">
+              <i class="fa fa-comments-o"></i>
+              <a href="#">300 Comments</a>
+            </span>
+            <span class="view-link">
+              <i class="fa fa-eye"></i>
+              <a href="#">1000 Views</a>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="xs-box-shadow xs-single-journal">
+          <div class="entry-thumbnail">
+            <img src="{% static 'main_app/images/blog/blog_2.jpg' %}" alt="" />
+            <div class="post-author">
+              <span class="xs-round-avatar">
+                <img
+                  class="img-responsive"
+                  src="{% static 'main_app/images/avatar/avatar_2.jpg' %}"
+                  alt=""
+                />
+              </span>
+              <span class="author-name">
+                <a href="#">By Julian</a>
+              </span>
+            </div>
+          </div>
+          <div class="entry-header">
+            <div class="entry-meta">
+              <span class="date">
+                <a href="#" rel="bookmark" class="entry-date"> 02 May 2017 </a>
+              </span>
+            </div>
+            <h4 class="entry-title">
+              <a href="#"
+                >South african pre primary school build for children</a
+              >
+            </h4>
+          </div>
+          <span class="xs-separetor"></span>
+          <div class="post-meta">
+            <span class="comments-link">
+              <i class="fa fa-comments-o"></i>
+              <a href="#">300 Comments</a>
+            </span>
+            <span class="view-link">
+              <i class="fa fa-eye"></i>
+              <a href="#">1000 Views</a>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="xs-box-shadow xs-single-journal">
+          <div class="entry-thumbnail">
+            <img src="{% static 'main_app/images/blog/blog_3.jpg' %}" alt="" />
+            <div class="post-author">
+              <span class="xs-round-avatar">
+                <img
+                  class="img-responsive"
+                  src="{% static 'main_app/images/avatar/avatar_3.jpg' %}"
+                  alt=""
+                />
+              </span>
+              <span class="author-name">
+                <a href="#">By David Willy</a>
+              </span>
+            </div>
+          </div>
+          <div class="entry-header">
+            <div class="entry-meta">
+              <span class="date">
+                <a href="#" rel="bookmark" class="entry-date">
+                  13 January 2017
+                </a>
+              </span>
+            </div>
+            <h4 class="entry-title">
+              <a href="#">Provide pure water for syrian poor people</a>
+            </h4>
+          </div>
+          <span class="xs-separetor"></span>
+          <div class="post-meta">
+            <span class="comments-link">
+              <i class="fa fa-comments-o"></i>
+              <a href="#">300 Comments</a>
+            </span>
+            <span class="view-link">
+              <i class="fa fa-eye"></i>
+              <a href="#">1000 Views</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> {% endcomment %}
+{% include "main_app/includes/footer.html" %}
+{% endblock content %}
+
+{% block scripts  %}
+    {% include "main_app/includes/scripts.html" %}
+{% endblock %}
