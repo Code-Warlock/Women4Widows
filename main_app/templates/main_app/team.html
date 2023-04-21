@@ -10,7 +10,7 @@ Conversation in Action - {{title}}
 
 {% block content %}
 {% include 'main_app/includes/header.html' %}
-<section class="xs-banner-inner-section parallax-window" style="background-image:url({% static 'main_app//images/backgrounds/team_bg.jpg' %})">
+<section class="xs-banner-inner-section parallax-window" style="background-image:url({% static 'main_app/images/backgrounds/team_bg.jpg' %})">
 <div class="xs-black-overlay"></div>
 <div class="container">
 <div class="color-white xs-inner-banner-content">
@@ -93,32 +93,7 @@ Conversation in Action - {{title}}
         </section> 
 {% include 'main_app/includes/contribute.html' %}
 
-<section class="xs-partner-section" style="background-image: url('assets/images/map.png');">
-<div class="container">
-<div class="row">
-<div class="col-lg-5">
-<div class="xs-partner-content">
-<div class="xs-heading xs-mb-40">
-<h2 class="xs-mb-0 xs-title">Trusted by the biggest <span class="color-green">brand.</span></h2>
-</div>
-<p>In-kind donations from our donors and partners allow charity: water to pass 100% of public donations straight to water projects. We are deeply grateful for those who have surprised us with their generosity. A big thanks to the following companies and people who have helped make charity: water’s work possible.</p>
-<a href="#" class="btn btn-primary bg-orange">
-join us now
-</a>
-</div>
-</div>
-<div class="col-lg-7">
-<ul class="fundpress-partners">
-<li><a href="#"><img src="assets/images/partner/client_1.png" alt=""></a></li>
-<li><a href="#"><img src="assets/images/partner/client_2.png" alt=""></a></li>
-<li><a href="#"><img src="assets/images/partner/client_3.png" alt=""></a></li>
-<li><a href="#"><img src="assets/images/partner/client_4.png" alt=""></a></li>
-<li><a href="#"><img src="assets/images/partner/client_5.png" alt=""></a></li>
-</ul>
-</div>
-</div>
-</div>
-</section> 
+{% include 'main_app/includes/partner.html' %}
 </main>
 {% include "main_app/includes/footer.html" %}
 {% endblock content %}
