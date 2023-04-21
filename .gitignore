@@ -139,5 +139,6 @@ templates/*
 main_app/static/main_app/images/* 
 !main_app/static/main_app/images/team/
 !main_app/static/main_app/images/partner/
+!main_app/static/main_app/images/backgrounds/team_bg.jpg
 !main_app/static/main_app/images/*.jpg
 !main_app/static/main_app/images/*.png
