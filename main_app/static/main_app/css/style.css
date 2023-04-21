@@ -366,14 +366,14 @@ li {
 }
 
 .btn-success {
-  background-color: #2cc391;
+  background-color: #041d57;
 }
 .btn-success:hover:before,
 .btn-success:hover:after {
   background-color: orangered;
 }
 .btn-success:hover {
-  background-color: #2cc391;
+  background-color: #041d57;
   color: #ffffff;
 }
 
@@ -1027,6 +1027,19 @@ blockquote span {
   width: 100%;
   z-index: 9999;
 }
+
+.header-transparent.scrolled {
+  background-color: #fff !important;
+  position: fixed;
+  transition: background-color 200ms linear;
+}
+.header-transparent.scrolled .nav-menu li a {
+  color: #041d57;
+}
+.header-transparent.scrolled .nav-menu li a .submenu-indicator-chevron {
+  border-color: transparent orangered orangered transparent;
+}
+
 .header-transparent .xs-top-bar {
   margin-left: -15px;
   margin-right: -15px;
@@ -1714,7 +1727,7 @@ blockquote span {
   color: #9064bf;
 }
 .xs-service-promo .color-green {
-  color: #2cc391;
+  color: orangered;
 }
 .xs-service-promo h5 {
   font-size: 1.28571em;
@@ -2141,12 +2154,12 @@ blockquote span {
   margin-bottom: 20px;
 }
 .women4widows li a {
-  width: 500px;
-  height: 500px;
-  line-height: 500px;
-    /* -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2); */
-  /* background-color: #ffffff; */
+  width: 180px;
+  height: 180px;
+  line-height: 180px;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
   border-radius: 100%;
   display: block;
   margin: 0 auto;
@@ -2703,6 +2716,7 @@ svg {
 
 .xs-maps-wraper {
   padding-top: 60px;
+  overflow: hidden;
 }
 
 #xs-map {
@@ -4582,7 +4596,7 @@ svg {
 }
 
 .color-green {
-  color: #3ac798;
+  color: orangered;
 }
 
 .color-light-red {

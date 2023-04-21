@@ -36,11 +36,11 @@
           <div class="col-lg-2 col-md-6 footer-widget">
             <h3 class="widget-title">About Us</h3>
             <ul class="xs-footer-list">
-              <li><a href="index.html">About Us</a></li>
+              <li><a href="{% url 'about' %}">About Us</a></li>
               <li><a href="#">Blog</a></li>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">Mission</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="{% url 'team' %}">Team</a></li>
+              <li><a href="{% url 'projects' %}">Mission</a></li>
+              <li><a href="{% url 'contact' %}">Contact</a></li>
             </ul>
           </div>
           <div class="col-lg-3 col-md-6 footer-widget">
@@ -63,7 +63,7 @@
                       </div>
                       <div class="xs-black-overlay"></div>
                     </a>
-                  </div>
+                  </div> 
                   <div class="post-info">
                     <h4 class="entry-title">
                       <a href="#">Donation to the widows</a>

@@ -1,42 +1,9 @@
 (function($) {
 "use strict";
 
-/*------------------------------------------------------------------
-[Table of contents]
-
-custom function
-portfolio gird
-banner slider
-single item slider
-number counter and skill bar animation
-skill bar and number counter
-mega navigation menu init
-countdown timer
-back to top
-insta feed
-video popup
-image popup
-map window opener add class
-Code For Switching Style (FOR DEMO)
-Contact From dynamic
-XpeedStudio multipile Maps
-XpeedStudio Maps
-
-
-
--------------------------------------------------------------------*/
 
 $(window).on('load', function() {
 
-	// custom xs function init
-
-	// setTimeout(() => {
-	// 	$('#preloader').fadeOut();
-	// }, 500);
-
-	/*==========================================================
-			portfolio gird
-	======================================================================*/
 	if($('.xs-portfolio-grid').length >0) {
 		var $portfolioGrid = $('.xs-portfolio-grid'),
 		colWidth = function () {
@@ -80,7 +47,7 @@ $(window).on('load', function() {
 		};
 	  isotope();
 	  $(window).resize(isotope);
-	  } // End is_exists
+	  } 
 
 }); // END load Function 
 
@@ -90,6 +57,13 @@ $(document).ready(function() {
 	/*==========================================================
 			banner slider
 	======================================================================*/
+	$(function () {
+		$(document).scroll(function () {
+		  var $nav = $(".header-transparent");
+		  $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+		});
+	  });
+
 	if ( $( '.xs-banner-slider' ).length > 0 ) {
 		var bannerSlider = $( ".xs-banner-slider" );
 		bannerSlider.owlCarousel( {

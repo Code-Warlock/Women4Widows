@@ -1,11 +1,3 @@
-
-
-/*
-Author: XpeedStudio
-Author URI: http://themeforest.net/user/XpeedStudio/portfolio
-*/
-
-/* Portrait tablets and medium desktops */
 @media (min-width: 992px) and (max-width: 1199px) {
 	body {
 		font-size: 14px;;
@@ -71,6 +63,10 @@ Author URI: http://themeforest.net/user/XpeedStudio/portfolio
 		background-color: #ffffff;
 		box-shadow: 0 0.5em 0 0 #ffffff, 0 1em 0 0 #ffffff;
 	}
+	.header-transparent.scrolled .xs_nav-portrait .nav-toggle:before {
+		background-color: orangered;
+		box-shadow: 0 0.5em 0 0 orangered, 0 1em 0 0 orangered;
+	}
 	.header-transparent .nav-menu li a .submenu-indicator-chevron {
 		border-color: transparent #333333 #333333 transparent;
 	}
@@ -93,7 +89,7 @@ Author URI: http://themeforest.net/user/XpeedStudio/portfolio
 	.header-transparent .nav-menu li a, 
 	.xs-box .nav-menu li a {
 		padding: 15px 15px;
-		color: #333333;
+		color: #041d57 !important;
 	}
 	.xs-header .nav-menus-wrapper {
 		flex-direction: unset;
