@@ -46,3 +46,15 @@ def projects(request):
         "projects" : "projects"
     }
     return render(request,'main_app/projects.html', context)
+
+def projects(request):
+    context = {
+        "title" : "Projects"
+    }
+    return render(request,'main_app/projects.html', context)
+
+def event(request,slug):
+    context = {
+        "title" : "event['title']"
+    }
+    return render(request,'main_app/event-single.html', context)
