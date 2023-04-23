@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 # Create your views here.
 from random import choice
@@ -53,8 +53,12 @@ def projects(request):
     }
     return render(request,'main_app/projects.html', context)
 
-def event(request,slug):
-    context = {
-        "title" : "event['title']"
-    }
-    return render(request,'main_app/event-single.html', context)
+def project(request,slug):
+    title = "Uvuru Widows Empowerment"
+    if title.split()[0].lower() in slug or title.split()[0].lower() in slug.split('-'):
+        context = {
+            "title" : title
+        }
+        return render(request,'main_app/project.html', context)
+    else:
+        return redirect('projects')

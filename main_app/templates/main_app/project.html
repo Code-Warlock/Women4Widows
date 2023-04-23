@@ -11,14 +11,14 @@ Conversation in Action - {{title}}
 {% block content %}
 {% include 'main_app/includes/header.html' %}	
 
-<section class="xs-banner-inner-section parallax-window" style="background-image:url('assets/images/backgrounds/event_bg.jpg')">
-<div class="xs-black-overlay"></div>
+<section class="xs-banner-inner-section parallax-window" style="background-image:url({% static 'main_app/images/smiling_widows.jpg' %})">
+<div class="xs-black-overlay" style="background-color: rgba(0, 0, 0, 0.8)"></div>
 <div class="container">
 <div class="color-white xs-inner-banner-content">
-<h2>Events</h2>
+<h2>{{title}}</h2>
 <p>Give a helping hand for poor people</p>
 <ul class="xs-breadcumb">
-<li class="badge badge-pill badge-primary"><a href="index.html" class="color-white"> Home /</a> Events</li>
+<li class="badge badge-pill badge-primary"><a href="{% url 'main-page' %}" class="color-white"> Home /</a> Projects</li>
 </ul>
 </div>
 </div>

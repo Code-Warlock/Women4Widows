@@ -12,7 +12,7 @@ Conversation in Action - {{title}}
 {% include 'main_app/includes/header.html' %}	
 
 <section class="xs-banner-inner-section parallax-window" style="background-image:url({% static 'main_app/images/widow5_with_fam.jpg' %})">
-<div class="xs-black-overlay"></div>
+<div class="xs-black-overlay" style="background-color: rgba(0, 0, 0, 0.8)"></div>
 <div class="container">
 <div class="color-white xs-inner-banner-content">
 <h2>{{title}}</h2>
@@ -42,10 +42,10 @@ Conversation in Action - {{title}}
                 </div>
                 <div class="col-md-7">
                     <div class="xs-event-content">
-                        <a href="#">Uvuru Widows' Empowerment.</a>
+                        <a href="{% url 'project' 'uvuru-widows-empowerment' %}">Uvuru Widows' Empowerment.</a>
                         <p>{{ 'SUPPORTING LOCAL WIDOWS TO BECOME PRODUCTIVE IN THE COMMUNITYY THROUGH ECONOMIC EMPOWERMENT' |lower|capfirst }}.</p>
                         <div class="xs-countdown-timer" data-countdown="2020/02/24"></div>
-                        <a href="#" class="btn btn-primary">
+                        <a href="{% url 'project' 'uvuru-widows-empowerment' %}" class="btn btn-primary">
                         Learn More
                         </a>
                     </div>
