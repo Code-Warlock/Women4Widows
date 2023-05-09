@@ -2145,6 +2145,12 @@ blockquote span {
   margin-bottom: 50px;
 }
 
+.women4widows-sp {
+  text-align: center;
+  height: 100%;
+  display: table;
+  width: 100%;
+}
 .women4widows {
   text-align: center;
 }
@@ -2152,6 +2158,53 @@ blockquote span {
   display: inline-block;
   margin-right: 20px;
   margin-bottom: 20px;
+
+}
+.women4widows-sp li {
+  display: table-cell;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  vertical-align: middle;
+}
+.women4widows-sp li a {
+  padding: 0px 30px 30px;
+  transform: scale(1.4);
+  width: 180px;
+  height: 180px;
+  line-height: 180px;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  border-radius: 100%;
+  display: block;
+  margin: 0 auto;
+}
+@media screen and (max-width: 576px) {
+  .women4widows-sp li a {
+    width: 180px;
+    height: 180px;
+    line-height: 180px;
+      -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    border-radius: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  
+}
+.women4widows-sp li a {
+  padding: 0px 30px 30px;
+  transform: scale(1.4);
+  width: 180px;
+  height: 180px;
+  line-height: 180px;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  border-radius: 100%;
+  display: block;
+  margin: 0 auto;
 }
 .women4widows li a {
   width: 180px;
