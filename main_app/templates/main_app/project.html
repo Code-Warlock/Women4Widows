@@ -1,199 +1,297 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block title %}
-Conversation in Action - {{title}}
-{% endblock %}
+{% extends 'base.html' %} 
+ {% load static %} 
+ {% block title %} Conversation in Action - {{project.title}} {% endblock %}
+ {% block styles %} {% include 'main_app/includes/styles.html' %} {% endblock styles %}
+ {% block content %}
+ {% include 'main_app/includes/header.html' %}
 
-{% block styles %}
-    {% include 'main_app/includes/styles.html' %}
-{% endblock styles %}
-
-{% block content %}
-{% include 'main_app/includes/header.html' %}	
-
-<section class="xs-banner-inner-section parallax-window" style="background-image:url({% static 'main_app/images/smiling_widows.jpg' %})">
-<div class="xs-black-overlay" style="background-color: rgba(0, 0, 0, 0.8)"></div>
-<div class="container">
-<div class="color-white xs-inner-banner-content">
-<h2>{{title}}</h2>
-<p>Give a helping hand for poor people</p>
-<ul class="xs-breadcumb">
-<li class="badge badge-pill badge-primary"><a href="{% url 'main-page' %}" class="color-white"> Home /</a> Projects</li>
-</ul>
-</div>
-</div>
+<section
+  class="xs-banner-inner-section parallax-window"
+  style="background-image: url({% static project.imageurl %})"
+>
+  <div
+    class="xs-black-overlay"
+    style="background-color: rgba(0, 0, 0, 0.8)"
+  ></div>
+  <div class="container">
+    <div class="color-white xs-inner-banner-content">
+      <h2>{{project.title}}</h2>
+      <p>Give a helping hand for the widows of Africa</p>
+      <ul class="xs-breadcumb">
+        <li class="badge badge-pill badge-primary">
+            <a href="{% url 'main-page' %}" class="color-white"> Home /</a>
+            <a href="{% url 'projects' %}" class="color-white"> Projects /</a>
+            {{project.title | capfirst}}
+        </li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <main class="xs-main">
+  <section class="xs-content-section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="xs-event-banner">
+            <img
+              src="{% static project.imageurl2 %}"
+              alt=""
+            />
+          </div>
+          
+          <div class="row">
+            <div class="col-lg-8 xs-event-wraper">
+              <div class="xs-event-content">
+                <h4>{{project.title}}</h4>
+                <p>
+                  {{project.description}}
+                </p>
+              </div>
 
-<section class="xs-content-section-padding">
-<div class="container">
-<div class="row">
-<div class="col-md-12">
-<div class="xs-event-banner">
-<img src="{% static 'main_app/images/women_sharing.jpg' %}" alt="">
-</div>
-<div class="row">
-<div class="col-lg-8 xs-event-wraper">
-<div class="xs-event-content">
-<h4>Uvuru Women Empowerment</h4>
-<p>Uvuru project desc. Learn how access to clean water can improve health, boost local econom mies. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore ete dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
+              <div class="xs-horizontal-tabs">
+                <ul class="nav nav-tabs" role="tablist">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active"
+                      data-toggle="tab"
+                      href="#facilities"
+                      role="tab"
+                      >Activities</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      data-toggle="tab"
+                      href="#mapLocation"
+                      role="tab"
+                      >Location</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      data-toggle="tab"
+                      href="#contactUs"
+                      role="tab"
+                      >Contact us</a
+                    >
+                  </li>
+                </ul>
 
-<div class="xs-horizontal-tabs">
-
-<ul class="nav nav-tabs" role="tablist">
-<li class="nav-item">
-<a class="nav-link active" data-toggle="tab" href="#facilities" role="tab">Activities</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" data-toggle="tab" href="#mapLocation" role="tab">Location</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" data-toggle="tab" href="#contactUs" role="tab">Contact us</a>
-</li>
-</ul>
-
-<div class="tab-content">
-<div class="tab-pane fade show active" id="facilities" role="tabpanel">
-<p>Uvuru Project desc. Learn how access to clean water can improve health, boost local econom mies. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore ete dolore magna aliqua.</p>
-<div class="row">
-<div class="col-md-6">
-<ul class="xs-unorder-list circle green-icon">
-<li>Assisting widow consultants in farming </li>
-<li>Share best practices and knowledge.</li>
-<li>Assisting widow consultants in farming </li>
-</ul>
-</div>
-<div class="col-md-6">
-<ul class="xs-unorder-list circle green-icon">
-<li>Collaborate with technology, informations security, and business partners </li>
-<li>Find and address performance issues.</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="tab-pane" id="mapLocation" role="tabpanel">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63397.113100071125!2d7.154418241776304!3d6.730809716802797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1044f379dc323ae7%3A0xbacf2d2d05a07129!2sUVURU!5e0!3m2!1sen!2sng!4v1682089230421!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
-<div class="tab-pane" id="contactUs" role="tabpanel">
-<div class="xs-contact-form-wraper">
-<form action="#" method="POST" id="xs-contact-form" class="xs-contact-form">
-<div class="input-group">
-<input type="text" name="name" id="xs-name" class="form-control" placeholder="Enter Your Name.....">
-<div class="input-group-append">
-<div class="input-group-text"><i class="fa fa-user"></i></div>
-</div>
-</div>
-<div class="input-group">
-<input type="email" name="email" id="xs-email" class="form-control" placeholder="Enter Your Email.....">
-<div class="input-group-append">
-<div class="input-group-text"><i class="fa fa-envelope-o"></i></div>
-</div>
-</div>
-<div class="input-group massage-group">
-<textarea name="massage" placeholder="Enter Your Message....." id="xs-massage" class="form-control" cols="30" rows="10"></textarea>
-<div class="input-group-append">
-<div class="input-group-text"><i class="fa fa-pencil"></i></div>
-</div>
-</div>
-<button class="btn btn-success" type="submit" id="xs-submit">submit</button>
-</form>
-</div>
-</div>
-</div>
-</div> 
-<div class="row xs-mb-60">
-<div class="col-md-6 xs-about-feature">
-<h3>Project Mission</h3>
-<p>Uvuru Project Mission. Learn how it access to clean water can improve health, boost local econom mies. Lorem ipsum dolor sit amet. consectetur adipisicing elit.</p>
-</div>
-<div class="col-md-6 xs-about-feature">
-<h3>Project Vission</h3>
-<p>uvuru Project Vission. Learn how it access to clean water can improve health, boost local econom mies. Lorem ipsum dolor sit amet. consectetur adipisicing elit.</p>
-</div>
-</div>
-<div class="xs-about-feature xs-mb-30">
-<h3>Our Vision</h3>
-<p class="lead">{% lorem 20 w random %}</p>
-</div>
-<div class="row">
-<div class="col-md-4">
-<div class="xs-service-promo">
-<span class="icon-water color-orange"></span>
-<h5>Skill Acquisition<br>For Widows</h5>
-</div>
-</div>
-<div class="col-md-4">
-<div class="xs-service-promo">
-<span class="icon-groceries color-red"></span>
-<h5>Healty Food <br>For the Widows</h5>
-</div>
-</div>
-<div class="col-md-4">
-<div class="xs-service-promo">
-<span class="icon-open-book color-green"></span>
-<h5>Education <br>For the Widows</h5>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-4">
-
-<div class="xs-event-schedule-widget">
-<div class="media xs-event-schedule">
-<div class="d-flex xs-evnet-meta-date">
-<span class="xs-event-date">25</span>
-<span class="xs-event-month">May</span>
-</div>
-<div class="media-body">
-<h5>The Widows in Africa need you</h5>
-</div>
-</div>
-<ul class="list-group xs-list-group">
-<li class="d-flex justify-content-between">
-Organized by:
-<span>Robert Slim</span>
-</li>
-<li class="d-flex justify-content-between">
-Start:
-<span>9.30 am</span>
-</li>
-<li class="d-flex justify-content-between">
-Venue:
-<span>National Zoo, NY</span>
-</li>
-<li class="d-flex justify-content-between">
-Phone:
-<span>91 260 5524</span>
-</li>
-<li class="d-flex justify-content-between">
-Email:
-<span><a href="https://demo.xpeedstudio.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="63000b02110a171a23061b020e130f064d000c0e">[email&#160;protected]</a></span>
-</li>
-</ul>
-</div>
-<div class="xs-countdown-timer timer-style-2 xs-mb-30" data-countdown="2020/02/07"></div>
-<div class="xs-event-schedule-widget">
-<h3 class="widget-title">Project Sponsor</h3>
-<ul class="xs-event-sponsor clearfix">
-<li><a href="#"><img src="{% static 'main_app/images/sunrise-no-bg.png' %}" alt=""/></a></li>
-<li><a href="#"><img src="{% static 'main_app/images/sunrise-no-bg.png' %}" alt=""/></a></li>
-<li><a href="#"><img src="{% static 'main_app/images/sunrise-no-bg.png' %}" alt=""/></a></li>
-<li><a href="#"><img src="{% static 'main_app/images/sunrise-no-bg.png' %}" alt=""/></a></li>
-</ul>
-</div> 
-</div>
-</div>
-</div>
-</div>
-</div>
-</section> 
+                <div class="tab-content">
+                  <div
+                    class="tab-pane fade show active"
+                    id="facilities"
+                    role="tabpanel"
+                  >
+                    <p>
+                      {{project.activities.desc}}
+                    </p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <ul class="xs-unorder-list circle green-icon">
+                            {% for item in project.activities.list|slice:"1:4" %}
+                          <li>{{item}}</li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                      <div class="col-md-6">
+                        <ul class="xs-unorder-list circle green-icon">
+                            {% for item in project.activities.list|slice:"4:" %}
+                          <li>{{item}}</li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="mapLocation" role="tabpanel">
+                    <iframe
+                      src="{{project.location}}"
+                      width="600"
+                      height="450"
+                      style="border: 0"
+                      allowfullscreen=""
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                  </div>
+                  <div class="tab-pane" id="contactUs" role="tabpanel">
+                    <div class="xs-contact-form-wraper">
+                      <form
+                        action="#"
+                        method="POST"
+                        id="xs-contact-form"
+                        class="xs-contact-form"
+                      >
+                        <div class="input-group">
+                          <input
+                            type="text"
+                            name="name"
+                            id="xs-name"
+                            class="form-control"
+                            placeholder="Enter Your Name....."
+                          />
+                          <div class="input-group-append">
+                            <div class="input-group-text">
+                              <i class="fa fa-user"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="input-group">
+                          <input
+                            type="email"
+                            name="email"
+                            id="xs-email"
+                            class="form-control"
+                            placeholder="Enter Your Email....."
+                          />
+                          <div class="input-group-append">
+                            <div class="input-group-text">
+                              <i class="fa fa-envelope-o"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="input-group massage-group">
+                          <textarea
+                            name="massage"
+                            placeholder="Enter Your Message....."
+                            id="xs-massage"
+                            class="form-control"
+                            cols="30"
+                            rows="10"
+                          ></textarea>
+                          <div class="input-group-append">
+                            <div class="input-group-text">
+                              <i class="fa fa-pencil"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <button
+                          class="btn btn-success"
+                          type="submit"
+                          id="xs-submit"
+                        >
+                          submit
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+            </div>
+           {% comment %}
+             <div class="row h-25 otherimages">
+               <div class="col-md-6 d-flex justify-content-evenly align-content-center">
+                 
+                   <img src="{% static project.imageurl2 %}" class="col-sm-12 col-md-4 mx-2" alt=""/>
+               </div>
+             </div>
+           {% endcomment %}
+              <div class="row xs-mb-60">
+                <div class="col-md-6 xs-about-feature">
+                  <h3>Project Mission</h3>
+                  <p>
+                    {{project.mission}}
+                  </p>
+                </div>
+                <div class="col-md-6 xs-about-feature">
+                  <h3>Project Vision</h3>
+                  <p>
+                    {{project.vision}}
+                  </p>
+                </div>
+              </div>
+              <div class="xs-about-feature xs-mb-30">
+                <h3>Our Vision</h3>
+                <p class="lead">{% lorem 20 w random %}</p>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="xs-service-promo">
+                    <span class="icon-water color-orange"></span>
+                    <h5>Skill Acquisition<br />For Widows</h5>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="xs-service-promo">
+                    <span class="icon-groceries color-red"></span>
+                    <h5>Healty Food <br />For the Widows</h5>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="xs-service-promo">
+                    <span class="icon-open-book color-green"></span>
+                    <h5>Education <br />For the Widows</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="xs-event-schedule-widget">
+                <div class="media xs-event-schedule">
+                  <div class="d-flex xs-evnet-meta-date">
+                    <span class="xs-event-date">25</span>
+                    <span class="xs-event-month">May</span>
+                  </div>
+                  <div class="media-body">
+                    <h5>{{project.title}}</h5>
+                  </div>
+                </div>
+                <ul class="list-group xs-list-group">
+                  <li class="d-flex justify-content-between">
+                    Organized by:
+                    <span>{{project.organiser}}</span>
+                  </li>
+                  <li class="d-flex justify-content-between">
+                    Duration:
+                    <span>{{project.start}} - {{project.end}}</span>
+                  </li>
+                  <li class="d-flex justify-content-between">
+                    Venue:
+                    <span>{{project.venue}}</span>
+                  </li>
+                  <li class="d-flex justify-content-between">
+                    Phone:
+                    <span>91 260 5524</span>
+                  </li>
+                  <li class="d-flex justify-content-between">
+                    Email:
+                    <span
+                      ><a
+                        href="#"
+                        >Email address</a
+                      ></span
+                    >
+                  </li>
+                </ul>
+              </div>
+              {% comment %} <div
+                class="xs-countdown-timer timer-style-2 xs-mb-30"
+                data-countdown="2024/02/07"
+              ></div> {% endcomment %}
+              <div class="xs-event-schedule-widget">
+                <h3 class="widget-title">Project Sponsor</h3>
+                <ul class="xs-event-sponsor clearfix">
+                  <li>
+                    <a href="#"
+                      ><img
+                        src="{% static 'main_app/images/sunrise-no-bg.png' %}"
+                        alt=""
+                    /></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
-{% include "main_app/includes/footer.html" %}
-{% endblock content %}
-
-{% block scripts  %}
-	{% include "main_app/includes/scripts.html" %}
+ {% include "main_app/includes/footer.html" %}
+ {% endblock content %} 
+ {% block scripts %}
+ {% include "main_app/includes/scripts.html" %}
 {% endblock %}

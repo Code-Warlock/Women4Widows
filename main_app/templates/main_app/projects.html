@@ -44,8 +44,31 @@ Conversation in Action - {{title}}
                     <div class="xs-event-content">
                         <a href="{% url 'project' 'uvuru-widows-empowerment' %}">Uvuru Widows' Empowerment.</a>
                         <p>{{ 'SUPPORTING LOCAL WIDOWS TO BECOME PRODUCTIVE IN THE COMMUNITYY THROUGH ECONOMIC EMPOWERMENT' |lower|capfirst }}.</p>
-                        <div class="xs-countdown-timer" data-countdown="2020/02/24"></div>
+                        {% comment %} <div class="xs-countdown-timer" data-countdown="2020/02/24"></div> {% endcomment %}
                         <a href="{% url 'project' 'uvuru-widows-empowerment' %}" class="btn btn-primary">
+                        Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mx-auto row xs-single-event event-blue">
+                    <div class="col-md-5">
+                        <div class="xs-event-image">
+                            <img src="{% static 'main_app/images/peaceful_women.jpg' %}" alt="">
+                            <div class="xs-entry-date">
+                                <span class="entry-date-day">18th</span>
+                                <span class="entry-date-month">August 2019</span>
+                            </div>
+                        <div class="xs-black-overlay"></div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="xs-event-content">
+                        <a href="{% url 'project' 'sunrise-medical-outreach' %}">Medical Outreach in Uvuru, Enugu, Nigeria.</a>
+                        <p>{{ 'A MEDICAL OUTREACH ORGANIZED AND HOSTED BY THE <span class="color-primary"> SUNRISE FOR RURAL DWELLERS </span> ORGANISATION WAS A SUCCESS' |lower|capfirst }}.</p>
+                        {% comment %} <div class="xs-countdown-timer" data-countdown="2020/02/24"></div> {% endcomment %}
+                        <a href="{% url 'project' 'sunrise-medical-outreach' %}" class="btn btn-primary">
                         Learn More
                         </a>
                     </div>

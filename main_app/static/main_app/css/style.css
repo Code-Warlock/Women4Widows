@@ -4630,7 +4630,7 @@ svg {
   display: inline-flex;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
-  justify-content: flex-end;
+  justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -4839,4 +4839,32 @@ h3 {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+}
+
+.xs-archive-image img{
+  display: block !important;
+  margin: 0 auto !important;
+  width: 200px !important;
+  height: 200px !important;
+  border-radius: 50% !important;
+  margin: 0 auto !important;
+}
+
+@media screen and (min-width: 992px) {
+  .xs-archive-image img{
+    transform: scale(1.5) translateX(50px);
+  }
+  .xs-archive-image img.reverse{
+    transform: scale(1.5) translateX(-50px);
+  }
+}
+
+.color-primary {
+  color: orangered !important;
+}
+
+.otherimages img{
+  object-fit: cover !important;
+  object-position: top left !important;
+  /* width: calc(100% / 3); */
 }

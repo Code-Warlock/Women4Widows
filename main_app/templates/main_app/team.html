@@ -1,103 +1,214 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block title %}
-Conversation in Action - {{title}}
-{% endblock %}
-
-{% block styles %}
-    {% include 'main_app/includes/styles.html' %}
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title %} 
+Conversation in Action - {{title}} 
+{% endblock %} {% block styles %} 
+{% include 'main_app/includes/styles.html' %} 
 {% endblock styles %}
-
 {% block content %}
 {% include 'main_app/includes/header.html' %}
-<section class="xs-banner-inner-section parallax-window" style="background-image:url({% static 'main_app/images/backgrounds/team_bg.jpg' %})">
-<div class="xs-black-overlay"></div>
-<div class="container">
-<div class="color-white xs-inner-banner-content">
-<h2>Our Team</h2>
-<p>Give a helping hand to the widows of Africa</p>
-<ul class="xs-breadcumb">
-<li class="badge badge-pill badge-primary"><a href="{% url 'main-page' %}" class="color-white"> Home /</a> Team</li>
-</ul>
-</div>
-</div>
+<section
+  class="xs-banner-inner-section parallax-window"
+  style=" background-image: url({%static 'main_app/images/backgrounds/team_bg.jpg'%});"
+>
+  <div class="xs-black-overlay"></div>
+  <div class="container">
+    <div class="color-white xs-inner-banner-content">
+      <h2>Our Team</h2>
+      <p>Give a helping hand to the widows of Africa</p>
+      <ul class="xs-breadcumb">
+        <li class="badge badge-pill badge-primary">
+          <a href="{% url 'main-page' %}" class="color-white"> Home /</a> Team
+        </li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <main class="xs-main">
-
-    <section class="xs-section-padding bg-gray">
-        <div class="container">
-        <div class="xs-heading row xs-mb-60">
+  <section class="xs-section-padding bg-gray">
+    <div class="container">
+      <div class="xs-heading row xs-mb-60">
         <div class="col-md-9 col-xl-9">
-        <h2 class="xs-title">Our Team</h2>
-        <span class="xs-separetor dashed"></span>
-        <p>The Women4Widows team, we are proud to have a dedicated and passionate team of individuals who are committed to making a positive impact on the widows of Africa. Get to know our team members</p>
+          <h2 class="xs-title">Our Team</h2>
+          <span class="xs-separetor dashed"></span>
+          <p>
+            The Women4Widows team, we are proud to have a dedicated and
+            passionate team of individuals who are committed to making a
+            positive impact on the widows of Africa. Get to know our team
+            members
+          </p>
         </div>
-        </div>
-        <div class="row xs-mb-60">
+      </div>
+      <div class="row xs-mb-60">
         <div class="col-md-6 col-lg-3">
-        <div class="xs-single-team">
-        <img src="{% static 'main_app/images/avatar2.png' %}" alt="">
-        <div class="xs-team-content">
-        <h4>Fr Tony Okolo</h4>
-        <small>CEO &amp; Founder</small>
-        <svg class="xs-svgs" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 138">
-        <path class="fill-red" d="M375,3294H645v128a10,10,0,0,1-10,10l-250-20a10,10,0,0,1-10-10V3294Z" transform="translate(-375 -3294)" />
-        </svg>
-        </div>
-        </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-        <div class="xs-single-team">
-        <img src="{% static 'main_app/images/avatar2.png' %}" alt="">
-        <div class="xs-team-content">
-        <h4>Phillip Tirone</h4>
-        <small>President</small>
-        <svg class="xs-svgs" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 138">
-        <path class="fill-purple" d="M375,3294H645v128a10,10,0,0,1-10,10l-250-20a10,10,0,0,1-10-10V3294Z" transform="translate(-375 -3294)" />
-        </svg>
-        </div>
-        </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-        <div class="xs-single-team">
-        <img src="{% static 'main_app/images/avatar2.png' %}" alt="">
-        <div class="xs-team-content">
-        <h4>Anselm Fr</h4>
-        <small>Director</small>
-        <svg class="xs-svgs" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 138">
-        <path class="fill-blue" d="M375,3294H645v128a10,10,0,0,1-10,10l-250-20a10,10,0,0,1-10-10V3294Z" transform="translate(-375 -3294)" />
-        </svg>
-        </div>
-        </div>
+          <div class="xs-single-team">
+            <img src="{% static 'main_app/images/avatar2.png' %}" alt="" />
+            <div class="xs-team-content">
+              <h4>Phillip Tirone</h4>
+              <small>President</small>
+              <svg
+                class="xs-svgs"
+                preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 270 138"
+              >
+                <path
+                  class="fill-red"
+                  d="M375,3294H645v128a10,10,0,0,1-10,10l-250-20a10,10,0,0,1-10-10V3294Z"
+                  transform="translate(-375 -3294)"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
         <div class="col-md-6 col-lg-3">
-        <div class="xs-single-team">
-        <img src="{% static 'main_app/images/avatar.jpg' %}" alt="">
-        <div class="xs-team-content">
-        <h4>Desmond M</h4>
-        <small>Volunteer</small>
-        <svg class="xs-svgs" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 138">
-        <path class="fill-orange" d="M375,3294H645v128a10,10,0,0,1-10,10l-250-20a10,10,0,0,1-10-10V3294Z" transform="translate(-375 -3294)" />
-        </svg>
+          <div class="xs-single-team">
+            <img src="{% static 'main_app/images/avatar2.png' %}" alt="" />
+            <div class="xs-team-content">
+              <h4>Fr Tony Okolo</h4>
+              <small>CEO &AMP; Founder</small>
+              <svg
+                class="xs-svgs"
+                preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 270 138"
+              >
+                <path
+                  class="fill-purple"
+                  d="M375,3294H645v128a10,10,0,0,1-10,10l-250-20a10,10,0,0,1-10-10V3294Z"
+                  transform="translate(-375 -3294)"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="xs-single-team">
+            <img src="{% static 'main_app/images/avatar2.png' %}" alt="" />
+            <div class="xs-team-content">
+              <h4>Anselm Fr</h4>
+              <small>Director</small>
+              <svg
+                class="xs-svgs"
+                preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 270 138"
+              >
+                <path
+                  class="fill-blue"
+                  d="M375,3294H645v128a10,10,0,0,1-10,10l-250-20a10,10,0,0,1-10-10V3294Z"
+                  transform="translate(-375 -3294)"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="xs-single-team">
+            <img src="{% static 'main_app/images/avatar.jpg' %}" alt="" />
+            <div class="xs-team-content">
+              <h4>Desmond M</h4>
+              <small>Volunteer</small>
+              <svg
+                class="xs-svgs"
+                preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 270 138"
+              >
+                <path
+                  class="fill-orange"
+                  d="M375,3294H645v128a10,10,0,0,1-10,10l-250-20a10,10,0,0,1-10-10V3294Z"
+                  transform="translate(-375 -3294)"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
+      </div>
+      <section class="waypoint-tigger xs-section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-lg-6">
+              <div class="xs-archive-content">
+                <div class="xs-heading">
+                  <h2 class="xs-line-title">Meet <b>The President</b></h2>
+                  <h3 class="xs-title big" data-title="Archived">Phillip Tirone</h3>
+                </div>
+                <p>
+                  {% lorem 60 w random %}
+                </p>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-6 row xs-archive-image">
+              <div class="col-md-12 xs-mb-30">
+                <img style="border-radius:100%;"src="{% static 'main_app/images/avatar2.png' %}" alt="" class="rounded" />
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="text-center">
-        <a href="#" class="btn btn-success">
-        join with us
-        </a>
+      </section>
+      <section class="waypoint-tigger xs-section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-lg-6 row xs-archive-image d-sm-none d-lg-block">
+                <div class="col-md-12 xs-mb-30">
+                  <img style="border-radius:100%;"src="{% static 'main_app/images/avatar2.png' %}" alt="" class="rounded reverse" />
+                </div>
+              </div>
+            <div class="col-md-12 col-lg-6">
+              <div class="xs-archive-content">
+                <div class="xs-heading">
+                  <h2 class="xs-line-title">Meet<b> The CEO &amp; Founder</b></h2>
+                  <h3 class="xs-title big" data-title="Archived">Fr Tony Okolo</h3>
+                </div>
+                <p>
+                  {% lorem 60 w random %}
+                </p>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-6 row xs-archive-image d-sm-block d-lg-none">
+                <div class="col-md-12 xs-mb-30">
+                  <img style="border-radius:100%;"src="{% static 'main_app/images/avatar2.png' %}" alt="" class="rounded reverse" />
+                </div>
+              </div>
+          </div>
         </div>
+      </section>
+      <section class="waypoint-tigger xs-section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-lg-6">
+              <div class="xs-archive-content">
+                <div class="xs-heading">
+                  <h2 class="xs-line-title"><b>The Director</b></h2>
+                  <h3 class="xs-title big" data-title="Archived">Fr Anselm</h3>
+                </div>
+                <p>
+                  {% lorem 60 w random %}
+                </p>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-6 row xs-archive-image">
+              <div class="col-md-12 xs-mb-30">
+                <img style="border-radius:100%;"src="{% static 'main_app/images/avatar2.png' %}" alt="" class="rounded" />
+              </div>
+            </div>
+          </div>
         </div>
-        </section> 
-{% include 'main_app/includes/contribute.html' %}
-
-{% include 'main_app/includes/partner.html' %}
+        <p style="margin-block-start:100px; width:50%; margin-inline:auto;font-size:1.2rem;">We are grateful for our team's hard work and dedication, and for their commitment to making a positive impact on the world. If you are interested in joining our team or volunteering with us,please join us</p>
+      </section>
+      
+      <div class="text-center">
+        <a href="#" class="btn btn-success"> join us </a>
+      </div>
+    </div>
+  </section>
+  {% include 'main_app/includes/contribute.html' %}
+  {% include 'main_app/includes/partner.html' %}
 </main>
-{% include "main_app/includes/footer.html" %}
-{% endblock content %}
-
-{% block scripts  %}
-    {% include "main_app/includes/scripts.html" %}
+{% include "main_app/includes/footer.html" %} 
+{% endblock content %} 
+{% block scripts %} 
+{% include "main_app/includes/scripts.html" %} 
 {% endblock %}

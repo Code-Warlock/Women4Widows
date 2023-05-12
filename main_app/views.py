@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render
 
 # Create your views here.
 from random import choice
-from .permanent_data import data,widows_url
+from .permanent_data import data,widows_url,_projects
 two_urls = []
 while len(two_urls) <= 2:
     two_urls.append(choice(widows_url))
@@ -54,11 +54,8 @@ def projects(request):
     return render(request,'main_app/projects.html', context)
 
 def project(request,slug):
-    title = "Uvuru Widows Empowerment"
-    if title.split()[0].lower() in slug or title.split()[0].lower() in slug.split('-'):
-        context = {
-            "title" : title
-        }
-        return render(request,'main_app/project.html', context)
-    else:
-        return redirect('projects')
+    proj = next(proj for proj in _projects if proj["slug"] == slug)
+    context = {
+        "project": proj
+    }
+    return render(request,'main_app/project.html',context) 
